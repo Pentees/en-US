@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <title>Build Info</title>
+        <link rel="stylesheet" href="/common/en-US/common.css" type="text/css">
+        <link rel="icon" href="/common/en-US/icon.ico">
+        <script>
+            fetch("/common/en-US/header.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#menu").innerHTML = data);
+            fetch("/common/en-US/footer.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#footer").innerHTML = data);
+          </script>
+    </head>
+    <body>
+        <div id="menu" translate="no"></div>
+        <div class="main">
+            <h1 translate="no">Site Version</h1>
+            <br>
+            <h4 style="font-weight: 550; text-indent: 1.5rem;">Site Whole Version:2.0.2408b</h4>
+            <h4 style="font-weight: 550; text-indent: 1.5rem;">Version of English Pages:1.0.2409</h4>
+            <br>
+            <h4 style="font-weight: 550; text-indent: 2rem;">Published(Site) 2024.11.3 (JST)</h4>
+            <h4 style="font-weight: 550; text-indent: 2rem;">Updateded(Site) 2024.8.28 (JST)</h4>
+            <br>
+            <h4 style="font-weight: 550; text-indent: 2rem;">Published(English) 2024.8.28(JST)</h4>
+            <br>
+            <h4 style="font-weight: 550; text-indent: 2rem;">Past Addition and Deletion</h4>
+            <div style="padding-left: 3rem;">
+                <div>
+                    2023-11-6 Published (v1.0.2311)<br>
+                    <div style="padding-left: 1rem;"></div>
+                </div>
+                <br>
+                <div>
+                    2024-8-22 Updated (v1.0.2408)<br>
+                    <div style="padding-left: 1rem;">
+                        Changed Background Design<br>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    2024-8-23 Updated (v1.0.2408a)<br>
+                    <div style="padding-left: 1rem;">
+                        Added Blog(Japanese Only)
+                    </div>
+                </div>
+                <br>
+                <div>
+                    2024-8-24 Updated (v1.0.2408b)
+                    <div style="padding-left: 1rem;">
+                        Opened New Japanese Page(/en-US/~)
+                    </div>
+                </div>
+                <br>
+                <div>
+                    2024-8-28 Updated (v.2.0.2409)
+                    <div style="padding-left: 1rem;">
+                        Moved Japanese Pages Path Opened when Updated to v1.0.2408b(2024-08-24) (/HP/~ → /en-US/~)<br>
+                        English Pages Added<br>
+                        Since This Update, The Version have been different between Whole Site and Japanese<br>
+                        Then, Each Version is Japanese: 1.1.2409, English: 1.0.2409
+                    </div>
+                </div>
+            </div>
+            <script>
+                var today = new Date();
+                var date = today.getFullYear() + "." + today.getMonth() + "." + today.getDate();
+                var hanshinCommand = [49,57,49,57];
+                var inputCommand = [];
+                document.onkeydown = function(e)
+                {
+                    inputCommand.push(e.keyCode);
+                    var inputCommandLen = inputCommand.length;
+                    var inputCode = inputCommand[inputCommandLen - 1];
+                    var commandCode = hanshinCommand[inputCommandLen - 1];
+                    if (inputCode === commandCode)
+                    {
+                        if (inputCommandLen === hanshinCommand.length)
+                        {
+                            inputCommand.length = 0;    
+                            console.log("Function: Japan Beast Called");
+                            location.replace("sc.html");
+                        }
+                    }
+                    else
+                    {
+                        inputCommand.length = 0;
+                    }
+                }
+            </script>
+        </div>
+        <div id="footer" style="display: inline;"></div>
+    </body>
+</html>

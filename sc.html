@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    <head>
+        <title>Secrets</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/common/en-US/common.css">
+        <link rel="icon" href="/common/en-US/icon.ico">
+        <script>
+            fetch("/common/en-US/header.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#menu").innerHTML = data);
+            fetch("/common/en-US/footer.html")
+              .then((response) => response.text())
+              .then((data) => document.querySelector("#footer").innerHTML = data);
+          </script>
+    </head>
+    <body id="bd">
+        <div id="menu" style="display: inline;" translate="no"></div>
+        <div class="main_content" style="padding-left: 10px;">
+            <h1 class="title" style="padding-top: 5px;">Inside Story</h1>
+            <div style="padding-left: 10px;">
+            </div>
+            <h3 class="title">Requere Query</h3>
+            <div style="padding-left: 10px;">
+                This site is Requered Windows XP and later OS and Chromium based Browzer<br>
+                Connection of Mac is not Rerified. Newer Versions may be able to connect, about earlyer Versions, I don't know <br>
+                If you have an Old Mac PC, and it can connect, tell me what version of Mac and what Browzer can connect<br>
+                Even Using Dial-Up, Most Pages can show in 1 minuite
+            </div>
+            <br>
+            <h3 class="title">Hidden Topic</h3>
+            <div style="padding-left: 10px;">
+                On "en-US/build.html", press [1, 9, 1, 9] to come here<br>
+                Page Design is based on Windows 95<br>
+            </div>
+            <br>
+        </div>
+        <div id="footer" style="display: inline;" translate="no"></div>
+    </body>
+</html>
